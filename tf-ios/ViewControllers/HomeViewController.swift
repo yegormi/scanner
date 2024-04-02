@@ -12,7 +12,15 @@ class HomeViewController: UIViewController {
         return button
     }()
     
-    private lazy var wifiImageView: UIImageView = {
+    private lazy var backgroundCard: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "backgroundCard")
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        return imageView
+    }()
+    
+    private lazy var wifiImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "wifi")
         imageView.contentMode = .scaleAspectFill
@@ -52,17 +60,21 @@ class HomeViewController: UIViewController {
     
     private func setupUI() {
         view.setSubviewsForAutoLayout([
-            wifiImageView,
+            backgroundCard,
+            wifiImage,
             wifiBoxView,
             navigationView
         ])
         
         NSLayoutConstraint.activate([
-            wifiImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
-            wifiImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            wifiImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            backgroundCard.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
+            backgroundCard.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundCard.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-            wifiBoxView.topAnchor.constraint(equalTo: wifiImageView.bottomAnchor, constant: -50),
+            wifiImage.centerXAnchor.constraint(equalTo: backgroundCard.centerXAnchor),
+            wifiImage.topAnchor.constraint(equalTo: backgroundCard.topAnchor, constant: 109),
+
+            wifiBoxView.topAnchor.constraint(equalTo: backgroundCard.bottomAnchor, constant: -50),
             wifiBoxView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             wifiBoxView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             

@@ -1,17 +1,33 @@
 import UIKit
 
+class RoundCornerButton: UIButton {
+    override func draw(_ rect: CGRect) {
+        self.clipsToBounds = true
+        self.layer.cornerRadius = self.bounds.height / 2
+    }
+}
+
 class MagneticViewController: UIViewController {
     
     private var currentValue: CGFloat = 0
     private let totalValue: CGFloat = 100
     private let animationDuration: TimeInterval = 2.0
+    
     private var state: State = .stopped {
         didSet {
             updateLabels()
         }
     }
     
-    private lazy var magneticImageView: UIImageView = {
+    private lazy var backgroundCard: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "backgroundCard")
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        return imageView
+    }()
+    
+    private lazy var magneticImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "magnetic")
         imageView.contentMode = .scaleAspectFill
@@ -45,9 +61,8 @@ class MagneticViewController: UIViewController {
         return label
     }()
     
-    private lazy var searchButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.set(cornerRadius: 25)
+    private lazy var searchButton: RoundCornerButton = {
+        let button = RoundCornerButton(type: .system)
         button.setBackgroundColor(.purplePrimary, for: .normal)
         button.setTitle("Search", for: .normal)
         button.tintColor = .white
@@ -68,7 +83,8 @@ class MagneticViewController: UIViewController {
     
     private func setupUI() {
         view.setSubviewsForAutoLayout([
-            magneticImageView,
+            backgroundCard,
+            magneticImage,
             progressImage,
             arrowView,
             magneticValue,
@@ -76,11 +92,14 @@ class MagneticViewController: UIViewController {
         ])
         
         NSLayoutConstraint.activate([
-            magneticImageView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
-            magneticImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            magneticImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-
-            progressImage.topAnchor.constraint(equalTo: magneticImageView.bottomAnchor, constant: 62),
+            backgroundCard.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundCard.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundCard.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
+            magneticImage.centerXAnchor.constraint(equalTo: backgroundCard.centerXAnchor),
+            magneticImage.topAnchor.constraint(equalTo: backgroundCard.topAnchor, constant: 109),
+            
+            progressImage.topAnchor.constraint(equalTo: backgroundCard.bottomAnchor, constant: 62),
             progressImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             progressImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             

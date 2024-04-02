@@ -73,9 +73,8 @@ class ScanViewController: UIViewController {
         return view
     }()
     
-    private lazy var toggleButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.set(cornerRadius: 25)
+    private lazy var toggleButton: RoundCornerButton = {
+        let button = RoundCornerButton(type: .system)
         button.setBackgroundColor(.purplePrimary, for: .normal)
         button.setTitle(state.title, for: .normal)
         button.tintColor = .white

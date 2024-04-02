@@ -45,9 +45,8 @@ class WiFiBoxView: UIView {
         return label
     }()
     
-    private lazy var scanButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.set(cornerRadius: 25)
+    private lazy var scanButton: RoundCornerButton = {
+        let button = RoundCornerButton(type: .system)
         button.setBackgroundColor(.purplePrimary, for: .normal)
         button.setTitle("Scan current network", for: .normal)
         button.tintColor = .white

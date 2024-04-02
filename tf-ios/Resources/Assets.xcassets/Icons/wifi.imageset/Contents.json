@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "wifi@1x.png",
+      "filename" : "router@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "wifi@2x.png",
+      "filename" : "router@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "wifi@3x.png",
+      "filename" : "router@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
