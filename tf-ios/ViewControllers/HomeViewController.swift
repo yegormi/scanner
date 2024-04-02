@@ -92,13 +92,13 @@ extension HomeViewController: NavigationCardDelegate {
         switch index {
         case 0:
             print("First screen")
-            self.push(MagneticViewController())
             break
         case 1:
             print("Second screen")
             break
         case 2:
             print("Third screen")
+            self.push(MagneticViewController())
             break
         case 3:
             print("Fourth screen")

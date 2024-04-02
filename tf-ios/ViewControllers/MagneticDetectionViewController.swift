@@ -2,14 +2,14 @@ import UIKit
 
 class MagneticViewController: UIViewController {
     
+    private var currentValue: CGFloat = 0
     private let totalValue: CGFloat = 100
     private let animationDuration: TimeInterval = 2.0
     private var state: State = .stopped {
         didSet {
-            updateSearchButton()
+            updateLabels()
         }
     }
-    private var gaugeValue: CGFloat = 0
     
     private lazy var magneticImageView: UIImageView = {
         let imageView = UIImageView()
@@ -36,12 +36,12 @@ class MagneticViewController: UIViewController {
         return imageView
     }()
     
-    private lazy var gaugeValueLabel: UILabel = {
+    private lazy var magneticValue: UILabel = {
         let label = UILabel()
         label.font = .roboto(.medium, size: 17)
         label.textColor = .white
         label.textAlignment = .center
-        label.text = "0"
+        label.text = "Search checking"
         return label
     }()
     
@@ -49,11 +49,11 @@ class MagneticViewController: UIViewController {
         let button = UIButton(type: .system)
         button.set(cornerRadius: 25)
         button.setBackgroundColor(.purplePrimary, for: .normal)
+        button.setTitle("Search", for: .normal)
         button.tintColor = .white
         button.contentEdgeInsets = UIEdgeInsets(top: 12.5, left: 0, bottom: 12.5, right: 0)
         button.titleLabel?.font = .roboto(.medium, size: 20)
         button.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
-        updateSearchButton()
         return button
     }()
     
@@ -71,7 +71,7 @@ class MagneticViewController: UIViewController {
             magneticImageView,
             progressImage,
             arrowView,
-            gaugeValueLabel,
+            magneticValue,
             searchButton,
         ])
         
@@ -88,43 +88,42 @@ class MagneticViewController: UIViewController {
             arrowView.leadingAnchor.constraint(equalTo: progressImage.leadingAnchor),
             arrowView.trailingAnchor.constraint(equalTo: progressImage.trailingAnchor),
             
-            gaugeValueLabel.topAnchor.constraint(equalTo: progressImage.bottomAnchor, constant: 47),
-            gaugeValueLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            gaugeValueLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            magneticValue.topAnchor.constraint(equalTo: progressImage.bottomAnchor, constant: 47),
+            magneticValue.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            magneticValue.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
-            searchButton.topAnchor.constraint(equalTo: gaugeValueLabel.bottomAnchor, constant: 87),
+            searchButton.topAnchor.constraint(equalTo: magneticValue.bottomAnchor, constant: 87),
             searchButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             searchButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
         ])
     }
     
     private func setGaugeValue(value: CGFloat) {
-        gaugeValue = value
-        gaugeValueLabel.text = "\(Int(value))"
-        
         let rotationAngle = value / totalValue * 180
         let rotationTransform = CGAffineTransform(rotationAngle: rotationAngle.degreesToRadians)
         arrowView.transform = rotationTransform
     }
     
-    private func updateSearchButton() {
-        searchButton.setTitle(state.rawValue, for: .normal)
-    }
-    
     @objc private func searchButtonTapped() {
-        if state == .stopped {
-            state = .searching
-            animateArrow(with: 50)
-        } else {
-            state = .stopped
-            animateArrow(with: 0)
+        switch self.state {
+        case .stopped:
+            self.currentValue = 50
+        case .searching:
+            self.currentValue = 0
+        }
+        animateGauge(with: self.currentValue)
+        state.toggle()
+    }
+    
+    private func animateGauge(with newValue: CGFloat) {
+        UIView.animate(withDuration: animationDuration) {
+            self.setGaugeValue(value: newValue)
         }
     }
     
-    private func animateArrow(with value: CGFloat) {
-        UIView.animate(withDuration: animationDuration) {
-            self.setGaugeValue(value: value)
-        }
+    private func updateLabels() {
+        magneticValue.text = "\(Int(self.currentValue)) µT"
+        searchButton.setTitle(self.state.title, for: .normal)
     }
 }
 
@@ -132,7 +131,20 @@ extension CGFloat {
     var degreesToRadians: CGFloat { self * .pi / 180 }
 }
 
-fileprivate enum State: String {
-    case searching = "Stop"
-    case stopped = "Search"
+private enum State {
+    case searching
+    case stopped
+    
+    var title: String {
+        switch self {
+        case .searching:
+            "Stop"
+        case .stopped:
+            "Search"
+        }
+    }
+    
+    mutating func toggle() {
+        self = (self == .searching) ? .stopped : .searching
+    }
 }
