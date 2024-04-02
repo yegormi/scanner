@@ -9,29 +9,35 @@ struct Device {
     let state: State
     
     var icon: UIImage {
-        switch state {
-        case .success:
-            return UIImage(named: "cellWifiSuccess")!
-        case .fail:
-            return UIImage(named: "cellWifiFail")!
-        }
+        return state.icon
     }
     
     var image: UIImage {
-        switch state {
-        case .success:
-            return UIImage(named: "wifiSuccess")!
-        case .fail:
-            return UIImage(named: "wifiFail")!
-        }
+        return state.image
     }
     
     enum State {
         case success
         case fail
+        
+        var icon: UIImage {
+            switch self {
+            case .success:
+                return UIImage(named: "cellWifiSuccess")!
+            case .fail:
+                return UIImage(named: "cellWifiFail")!
+            }
+        }
+        
+        var image: UIImage {
+            switch self {
+            case .success:
+                return UIImage(named: "wifiSuccess")!
+            case .fail:
+                return UIImage(named: "wifiFail")!
+            }
+        }
     }
-    
-    
 }
 
 extension Device {
@@ -44,10 +50,10 @@ extension Device {
         let value: String
         
         init?(_ value: String) {
+            self.value = value
             guard !value.isEmpty else {
                 return nil
             }
-            self.value = value
         }
     }
     
@@ -55,23 +61,47 @@ extension Device {
         let value: String
         
         init?(_ value: String) {
+            self.value = value
             guard isValidIPAddress(value) else {
                 return nil
             }
-            self.value = value
         }
         
-        
+        private func isValidIPAddress(_ value: String) -> Bool {
+            let components = value.components(separatedBy: ".")
+            guard components.count == 4 else {
+                return false
+            }
+            for component in components {
+                guard let number = Int(component), (0...255).contains(number) else {
+                    return false
+                }
+            }
+            return true
+        }
     }
     
     struct MACAddress {
         let value: String
         
         init?(_ value: String) {
+            self.value = value
             guard isValidMACAddress(value) else {
                 return nil
             }
-            self.value = value
+        }
+        
+        private func isValidMACAddress(_ value: String) -> Bool {
+            let components = value.components(separatedBy: ":")
+            guard components.count == 6 else {
+                return false
+            }
+            for component in components {
+                guard component.count == 2, Int(component, radix: 16) != nil else {
+                    return false
+                }
+            }
+            return true
         }
     }
     
@@ -79,36 +109,10 @@ extension Device {
         let value: String
         
         init?(_ value: String) {
+            self.value = value
             guard !value.isEmpty else {
                 return nil
             }
-            self.value = value
         }
     }
-}
-
-fileprivate func isValidMACAddress(_ value: String) -> Bool {
-    let components = value.components(separatedBy: ":")
-    guard components.count == 6 else {
-        return false
-    }
-    for component in components {
-        guard component.count == 2, Int(component, radix: 16) != nil else {
-            return false
-        }
-    }
-    return true
-}
-
-fileprivate func isValidIPAddress(_ value: String) -> Bool {
-    let components = value.components(separatedBy: ".")
-    guard components.count == 4 else {
-        return false
-    }
-    for component in components {
-        guard let number = Int(component), (0...255).contains(number) else {
-            return false
-        }
-    }
-    return true
 }
