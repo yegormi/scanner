@@ -10,10 +10,28 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        Styleguide.registerFonts()
+        
+        UINavigationBar.appearance().tintColor = .purplePrimary
+        
+        // Style navigation bars
+        let appearance = UINavigationBarAppearance()
+        appearance.titleTextAttributes = [
+            .font: UIFont.roboto(.medium, size: 17),
+            .foregroundColor: UIColor.white,
+        ]
+        appearance.largeTitleTextAttributes = [
+            .font:  UIFont.roboto(.medium, size: 20),
+            .foregroundColor: UIColor.white
+        ]
+        
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().compactAppearance = appearance
+        
+        UIScrollView.appearance().showsVerticalScrollIndicator = false
+        UIScrollView.appearance().showsHorizontalScrollIndicator = false
+        
         return true
     }
 

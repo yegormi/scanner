@@ -7,23 +7,66 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE9294622BBAE72D00729F82 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEF11F1E2BBAAA4B00864776 /* Roboto-Bold.ttf */; };
+		EE9294632BBAE73200729F82 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEF11F1D2BBAAA4B00864776 /* Roboto-Medium.ttf */; };
+		EE9294642BBAE73400729F82 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEF11F1C2BBAAA4B00864776 /* Roboto-Regular.ttf */; };
+		EE9294662BBAFAE900729F82 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9294652BBAFAE900729F82 /* UIButton+Extensions.swift */; };
+		EE9294682BBAFB0000729F82 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9294672BBAFB0000729F82 /* UIImage+Extensions.swift */; };
+		EE92946A2BBB02DF00729F82 /* MagneticDetectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9294692BBB02DF00729F82 /* MagneticDetectionViewController.swift */; };
+		EE92946C2BBB2F3900729F82 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92946B2BBB2F3900729F82 /* ScanViewController.swift */; };
+		EE92946F2BBB30BF00729F82 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = EE92946E2BBB30BF00729F82 /* Lottie */; };
+		EE9294712BBB30DB00729F82 /* radar.lottie in Resources */ = {isa = PBXBuildFile; fileRef = EE9294702BBB30DB00729F82 /* radar.lottie */; };
+		EE9294732BBB563300729F82 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9294722BBB563300729F82 /* ResultViewController.swift */; };
+		EE9294752BBB667800729F82 /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9294742BBB667800729F82 /* DeviceCell.swift */; };
+		EE9294772BBB670C00729F82 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9294762BBB670C00729F82 /* DetailViewController.swift */; };
+		EE9294792BBB71E900729F82 /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9294782BBB71E900729F82 /* Device.swift */; };
+		EE92947B2BBB738F00729F82 /* Device+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92947A2BBB738F00729F82 /* Device+Mock.swift */; };
+		EE92947E2BBBE70400729F82 /* DeviceInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92947D2BBBE70400729F82 /* DeviceInfoCell.swift */; };
+		EE9294802BBBE72500729F82 /* DeviceInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE92947F2BBBE72500729F82 /* DeviceInfoView.swift */; };
 		EEF11EF42BB9D78C00864776 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF11EF32BB9D78C00864776 /* AppDelegate.swift */; };
 		EEF11EF62BB9D78C00864776 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF11EF52BB9D78C00864776 /* SceneDelegate.swift */; };
-		EEF11EF82BB9D78C00864776 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF11EF72BB9D78C00864776 /* ViewController.swift */; };
-		EEF11EFB2BB9D78C00864776 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF11EF92BB9D78C00864776 /* Main.storyboard */; };
 		EEF11EFD2BB9D78E00864776 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEF11EFC2BB9D78E00864776 /* Assets.xcassets */; };
 		EEF11F002BB9D78E00864776 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEF11EFE2BB9D78E00864776 /* LaunchScreen.storyboard */; };
+		EEF11F082BB9D88100864776 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF11F072BB9D88100864776 /* HomeViewController.swift */; };
+		EEF11F0C2BB9F1BE00864776 /* WifiBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF11F0B2BB9F1BE00864776 /* WifiBoxView.swift */; };
+		EEF11F0E2BBA0C5D00864776 /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF11F0D2BBA0C5D00864776 /* UIView+Helpers.swift */; };
+		EEF11F172BBA9DF400864776 /* TwoByTwoFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF11F162BBA9DF400864776 /* TwoByTwoFlowLayout.swift */; };
+		EEF11F192BBA9E0000864776 /* NavigationCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF11F182BBA9E0000864776 /* NavigationCardView.swift */; };
+		EEF11F1B2BBA9FCD00864776 /* NavigationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF11F1A2BBA9FCD00864776 /* NavigationCard.swift */; };
+		EEF11F212BBAAAA900864776 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF11F202BBAAAA900864776 /* Fonts.swift */; };
+		EEF11F232BBAAAC200864776 /* RegisterFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF11F222BBAAAC200864776 /* RegisterFonts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE9294652BBAFAE900729F82 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		EE9294672BBAFB0000729F82 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		EE9294692BBB02DF00729F82 /* MagneticDetectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagneticDetectionViewController.swift; sourceTree = "<group>"; };
+		EE92946B2BBB2F3900729F82 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		EE9294702BBB30DB00729F82 /* radar.lottie */ = {isa = PBXFileReference; lastKnownFileType = file; path = radar.lottie; sourceTree = "<group>"; };
+		EE9294722BBB563300729F82 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		EE9294742BBB667800729F82 /* DeviceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
+		EE9294762BBB670C00729F82 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		EE9294782BBB71E900729F82 /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		EE92947A2BBB738F00729F82 /* Device+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Device+Mock.swift"; sourceTree = "<group>"; };
+		EE92947D2BBBE70400729F82 /* DeviceInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoCell.swift; sourceTree = "<group>"; };
+		EE92947F2BBBE72500729F82 /* DeviceInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoView.swift; sourceTree = "<group>"; };
 		EEF11EF02BB9D78C00864776 /* tf-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tf-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF11EF32BB9D78C00864776 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEF11EF52BB9D78C00864776 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EEF11EF72BB9D78C00864776 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EEF11EFA2BB9D78C00864776 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EEF11EFC2BB9D78E00864776 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEF11EFF2BB9D78E00864776 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEF11F012BB9D78E00864776 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEF11F072BB9D88100864776 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		EEF11F0B2BB9F1BE00864776 /* WifiBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WifiBoxView.swift; sourceTree = "<group>"; };
+		EEF11F0D2BBA0C5D00864776 /* UIView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
+		EEF11F162BBA9DF400864776 /* TwoByTwoFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoByTwoFlowLayout.swift; sourceTree = "<group>"; };
+		EEF11F182BBA9E0000864776 /* NavigationCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCardView.swift; sourceTree = "<group>"; };
+		EEF11F1A2BBA9FCD00864776 /* NavigationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationCard.swift; sourceTree = "<group>"; };
+		EEF11F1C2BBAAA4B00864776 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		EEF11F1D2BBAAA4B00864776 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		EEF11F1E2BBAAA4B00864776 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		EEF11F202BBAAAA900864776 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		EEF11F222BBAAAC200864776 /* RegisterFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFonts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,12 +74,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE92946F2BBB30BF00729F82 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE92947C2BBBE6EC00729F82 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EE9294782BBB71E900729F82 /* Device.swift */,
+				EE92947A2BBB738F00729F82 /* Device+Mock.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		EEF11EE72BB9D78C00864776 = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +109,91 @@
 		EEF11EF22BB9D78C00864776 /* tf-ios */ = {
 			isa = PBXGroup;
 			children = (
-				EEF11EF32BB9D78C00864776 /* AppDelegate.swift */,
-				EEF11EF52BB9D78C00864776 /* SceneDelegate.swift */,
-				EEF11EF72BB9D78C00864776 /* ViewController.swift */,
-				EEF11EF92BB9D78C00864776 /* Main.storyboard */,
+				EEF11F112BBA970700864776 /* ViewControllers */,
+				EEF11F132BBA972500864776 /* Views */,
+				EE92947C2BBBE6EC00729F82 /* Models */,
+				EEF11F102BBA96FC00864776 /* Extensions */,
+				EEF11F122BBA971A00864776 /* Application */,
+				EEF11F0F2BBA96EA00864776 /* Resources */,
+			);
+			path = "tf-ios";
+			sourceTree = "<group>";
+		};
+		EEF11F0F2BBA96EA00864776 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EEF11F1F2BBAAA4F00864776 /* Fonts */,
+				EEF11F202BBAAAA900864776 /* Fonts.swift */,
+				EEF11F222BBAAAC200864776 /* RegisterFonts.swift */,
+				EE9294702BBB30DB00729F82 /* radar.lottie */,
 				EEF11EFC2BB9D78E00864776 /* Assets.xcassets */,
 				EEF11EFE2BB9D78E00864776 /* LaunchScreen.storyboard */,
 				EEF11F012BB9D78E00864776 /* Info.plist */,
 			);
-			path = "tf-ios";
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EEF11F102BBA96FC00864776 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				EEF11F0D2BBA0C5D00864776 /* UIView+Helpers.swift */,
+				EE9294652BBAFAE900729F82 /* UIButton+Extensions.swift */,
+				EE9294672BBAFB0000729F82 /* UIImage+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EEF11F112BBA970700864776 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EEF11F072BB9D88100864776 /* HomeViewController.swift */,
+				EE9294692BBB02DF00729F82 /* MagneticDetectionViewController.swift */,
+				EE92946B2BBB2F3900729F82 /* ScanViewController.swift */,
+				EE9294722BBB563300729F82 /* ResultViewController.swift */,
+				EE9294762BBB670C00729F82 /* DetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EEF11F122BBA971A00864776 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				EEF11EF32BB9D78C00864776 /* AppDelegate.swift */,
+				EEF11EF52BB9D78C00864776 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		EEF11F132BBA972500864776 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EEF11F242BBAABC000864776 /* NavigationCards */,
+				EEF11F0B2BB9F1BE00864776 /* WifiBoxView.swift */,
+				EE9294742BBB667800729F82 /* DeviceCell.swift */,
+				EE92947D2BBBE70400729F82 /* DeviceInfoCell.swift */,
+				EE92947F2BBBE72500729F82 /* DeviceInfoView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		EEF11F1F2BBAAA4F00864776 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EEF11F1E2BBAAA4B00864776 /* Roboto-Bold.ttf */,
+				EEF11F1D2BBAAA4B00864776 /* Roboto-Medium.ttf */,
+				EEF11F1C2BBAAA4B00864776 /* Roboto-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		EEF11F242BBAABC000864776 /* NavigationCards */ = {
+			isa = PBXGroup;
+			children = (
+				EEF11F182BBA9E0000864776 /* NavigationCardView.swift */,
+				EEF11F1A2BBA9FCD00864776 /* NavigationCard.swift */,
+				EEF11F162BBA9DF400864776 /* TwoByTwoFlowLayout.swift */,
+			);
+			path = NavigationCards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +212,9 @@
 			dependencies = (
 			);
 			name = "tf-ios";
+			packageProductDependencies = (
+				EE92946E2BBB30BF00729F82 /* Lottie */,
+			);
 			productName = "tf-ios";
 			productReference = EEF11EF02BB9D78C00864776 /* tf-ios.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +243,9 @@
 				Base,
 			);
 			mainGroup = EEF11EE72BB9D78C00864776;
+			packageReferences = (
+				EE92946D2BBB30BF00729F82 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = EEF11EF12BB9D78C00864776 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,9 +260,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE9294632BBAE73200729F82 /* Roboto-Medium.ttf in Resources */,
 				EEF11F002BB9D78E00864776 /* LaunchScreen.storyboard in Resources */,
+				EE9294642BBAE73400729F82 /* Roboto-Regular.ttf in Resources */,
+				EE9294712BBB30DB00729F82 /* radar.lottie in Resources */,
 				EEF11EFD2BB9D78E00864776 /* Assets.xcassets in Resources */,
-				EEF11EFB2BB9D78C00864776 /* Main.storyboard in Resources */,
+				EE9294622BBAE72D00729F82 /* Roboto-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +276,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEF11EF82BB9D78C00864776 /* ViewController.swift in Sources */,
+				EEF11F0E2BBA0C5D00864776 /* UIView+Helpers.swift in Sources */,
+				EE9294772BBB670C00729F82 /* DetailViewController.swift in Sources */,
+				EE92946C2BBB2F3900729F82 /* ScanViewController.swift in Sources */,
+				EE9294662BBAFAE900729F82 /* UIButton+Extensions.swift in Sources */,
+				EEF11F172BBA9DF400864776 /* TwoByTwoFlowLayout.swift in Sources */,
+				EE92947E2BBBE70400729F82 /* DeviceInfoCell.swift in Sources */,
 				EEF11EF42BB9D78C00864776 /* AppDelegate.swift in Sources */,
+				EE9294732BBB563300729F82 /* ResultViewController.swift in Sources */,
+				EE9294792BBB71E900729F82 /* Device.swift in Sources */,
+				EE9294752BBB667800729F82 /* DeviceCell.swift in Sources */,
 				EEF11EF62BB9D78C00864776 /* SceneDelegate.swift in Sources */,
+				EEF11F1B2BBA9FCD00864776 /* NavigationCard.swift in Sources */,
+				EEF11F212BBAAAA900864776 /* Fonts.swift in Sources */,
+				EEF11F192BBA9E0000864776 /* NavigationCardView.swift in Sources */,
+				EEF11F232BBAAAC200864776 /* RegisterFonts.swift in Sources */,
+				EE9294682BBAFB0000729F82 /* UIImage+Extensions.swift in Sources */,
+				EE92946A2BBB02DF00729F82 /* MagneticDetectionViewController.swift in Sources */,
+				EE9294802BBBE72500729F82 /* DeviceInfoView.swift in Sources */,
+				EE92947B2BBB738F00729F82 /* Device+Mock.swift in Sources */,
+				EEF11F082BB9D88100864776 /* HomeViewController.swift in Sources */,
+				EEF11F0C2BB9F1BE00864776 /* WifiBoxView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		EEF11EF92BB9D78C00864776 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EEF11EFA2BB9D78C00864776 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EEF11EFE2BB9D78E00864776 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,10 +442,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RX5QFP6Q25;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "tf-ios/Info.plist";
+				INFOPLIST_FILE = "tf-ios/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,10 +469,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RX5QFP6Q25;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "tf-ios/Info.plist";
+				INFOPLIST_FILE = "tf-ios/Resources/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -363,6 +509,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EE92946D2BBB30BF00729F82 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EE92946E2BBB30BF00729F82 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EE92946D2BBB30BF00729F82 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EEF11EE82BB9D78C00864776 /* Project object */;
 }

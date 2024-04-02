@@ -1,0 +1,110 @@
+import UIKit
+
+extension Device {
+    static let mock: [Device] = [
+        Device(wifiName: Device.WifiName("LivingRoomWiFi")!,
+               ipAddress: Device.IPAddress("192.168.1.101")!,
+               connectionType: .wifi,
+               macAddress: Device.MACAddress("A1:B2:C3:D4:E5:F6")!,
+               hostname: Device.Hostname("LivingRoomSmartTV")!,
+               state: .success),
+        
+        Device(wifiName: Device.WifiName("OfficeWiFi")!,
+               ipAddress: Device.IPAddress("10.0.0.102")!,
+               connectionType: .ethernet,
+               macAddress: Device.MACAddress("1A:2B:3C:4D:5E:6F")!,
+               hostname: Device.Hostname("OfficeLaptop")!,
+               state: .fail),
+        
+        Device(wifiName: Device.WifiName("BedroomWiFi")!,
+               ipAddress: Device.IPAddress("192.168.1.103")!,
+               connectionType: .wifi,
+               macAddress: Device.MACAddress("AA:BB:CC:DD:EE:FF")!,
+               hostname: Device.Hostname("BedroomSmartphone")!,
+               state: .success),
+        
+        Device(wifiName: Device.WifiName("GuestWiFi")!,
+               ipAddress: Device.IPAddress("192.168.1.104")!,
+               connectionType: .wifi,
+               macAddress: Device.MACAddress("11:22:33:44:55:66")!,
+               hostname: Device.Hostname("GuestLaptop")!,
+               state: .fail),
+        
+        Device(wifiName: Device.WifiName("KitchenWiFi")!,
+               ipAddress: Device.IPAddress("192.168.1.105")!,
+               connectionType: .wifi,
+               macAddress: Device.MACAddress("AA:BB:CC:DD:EE:FF")!,
+               hostname: Device.Hostname("KitchenSmartFridge")!,
+               state: .success),
+        
+        Device(wifiName: Device.WifiName("ChildRoomWiFi")!,
+               ipAddress: Device.IPAddress("192.168.1.106")!,
+               connectionType: .wifi,
+               macAddress: Device.MACAddress("22:33:44:55:66:77")!,
+               hostname: Device.Hostname("ChildRoomTablet")!,
+               state: .fail),
+        
+        Device(wifiName: Device.WifiName("ParentRoomWiFi")!,
+               ipAddress: Device.IPAddress("192.168.1.107")!,
+               connectionType: .wifi,
+               macAddress: Device.MACAddress("33:44:55:66:77:88")!,
+               hostname: Device.Hostname("ParentRoomDesktop")!,
+               state: .success),
+        
+        Device(wifiName: Device.WifiName("BackyardWiFi")!,
+               ipAddress: Device.IPAddress("192.168.1.108")!,
+               connectionType: .wifi,
+               macAddress: Device.MACAddress("44:55:66:77:88:99")!,
+               hostname: Device.Hostname("BackyardCamera")!,
+               state: .fail),
+        
+        Device(wifiName: Device.WifiName("GarageWiFi")!,
+               ipAddress: Device.IPAddress("192.168.1.109")!,
+               connectionType: .wifi,
+               macAddress: Device.MACAddress("55:66:77:88:99:AA")!,
+               hostname: Device.Hostname("GarageSensor")!,
+               state: .success),
+        
+        Device(wifiName: Device.WifiName("HomeOfficeWiFi")!,
+               ipAddress: Device.IPAddress("192.168.1.110")!,
+               connectionType: .wifi,
+               macAddress: Device.MACAddress("66:77:88:99:AA:BB")!,
+               hostname: Device.Hostname("HomeOfficeDesktop")!,
+               state: .fail),
+        
+        Device(wifiName: Device.WifiName("GuestHouseWiFi")!,
+               ipAddress: Device.IPAddress("192.168.1.111")!,
+               connectionType: .wifi,
+               macAddress: Device.MACAddress("77:88:99:AA:BB:CC")!,
+               hostname: Device.Hostname("GuestHouseSmartTV")!,
+               state: .success),
+        
+        Device(wifiName: Device.WifiName("StudyRoomWiFi")!,
+               ipAddress: Device.IPAddress("192.168.1.112")!,
+               connectionType: .wifi,
+               macAddress: Device.MACAddress("88:99:AA:BB:CC:DD")!,
+               hostname: Device.Hostname("StudyRoomDesktop")!,
+               state: .fail),
+        
+        Device(wifiName: Device.WifiName("BasementWiFi")!,
+               ipAddress: Device.IPAddress("192.168.1.113")!,
+               connectionType: .wifi,
+               macAddress: Device.MACAddress("99:AA:BB:CC:DD:EE")!,
+               hostname: Device.Hostname("BasementServer")!,
+               state: .success),
+        
+        Device(wifiName: Device.WifiName("GuestRoomWiFi")!,
+               ipAddress: Device.IPAddress("192.168.1.114")!,
+               connectionType: .wifi,
+               macAddress: Device.MACAddress("AA:BB:CC:DD:EE:FF")!,
+               hostname: Device.Hostname("GuestRoomDesktop")!,
+               state: .fail),
+        
+        Device(wifiName: Device.WifiName("AtticWiFi")!,
+               ipAddress: Device.IPAddress("192.168.1.115")!,
+               connectionType: .wifi,
+               macAddress: Device.MACAddress("BB:CC:DD:EE:FF:00")!,
+               hostname: Device.Hostname("AtticPrinter")!,
+               state: .success)
+    ]
+}
