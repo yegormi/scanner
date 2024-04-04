@@ -31,14 +31,13 @@ class MagneticViewController: UIViewController {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "magnetic")
         imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
         return imageView
     }()
     
     private lazy var progressImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "magneticProgress")
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         return imageView
     }()
@@ -46,7 +45,7 @@ class MagneticViewController: UIViewController {
     private lazy var arrowView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "magneticArrow")
-        imageView.layer.anchorPoint = CGPoint(x: 0.6, y: 0.5)
+//        imageView.layer.anchorPoint = CGPoint(x: 0.6, y: 0.5)
         imageView.contentMode = .center
         imageView.clipsToBounds = true
         return imageView
@@ -78,7 +77,7 @@ class MagneticViewController: UIViewController {
         view.backgroundColor = .backgroundBlack
         setupUI()
         
-        setGaugeValue(value: 0)
+        setGaugeValue(value: 0, around: CGPoint(x: 0, y: 0))
     }
     
     private func setupUI() {
@@ -95,17 +94,19 @@ class MagneticViewController: UIViewController {
             backgroundCard.topAnchor.constraint(equalTo: view.topAnchor),
             backgroundCard.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             backgroundCard.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            backgroundCard.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4),
             
             magneticImage.centerXAnchor.constraint(equalTo: backgroundCard.centerXAnchor),
-            magneticImage.topAnchor.constraint(equalTo: backgroundCard.topAnchor, constant: 109),
+            magneticImage.centerYAnchor.constraint(equalTo: backgroundCard.centerYAnchor),
+            magneticImage.heightAnchor.constraint(equalTo: backgroundCard.heightAnchor, multiplier: 0.5),
             
             progressImage.topAnchor.constraint(equalTo: backgroundCard.bottomAnchor, constant: 62),
             progressImage.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             progressImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
             arrowView.topAnchor.constraint(equalTo: progressImage.topAnchor, constant: 154),
-            arrowView.leadingAnchor.constraint(equalTo: progressImage.leadingAnchor),
-            arrowView.trailingAnchor.constraint(equalTo: progressImage.trailingAnchor),
+            arrowView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            arrowView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             
             magneticValue.topAnchor.constraint(equalTo: progressImage.bottomAnchor, constant: 47),
             magneticValue.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -117,10 +118,16 @@ class MagneticViewController: UIViewController {
         ])
     }
     
-    private func setGaugeValue(value: CGFloat) {
+    func rotateView(view: UIView, angle: CGFloat, aroundPoint rotationCenter: CGPoint) {
+        let rotationTransform = CGAffineTransform(rotationAngle: angle)
+        view.layer.anchorPoint = CGPoint(x: rotationCenter.x / view.bounds.width, y: rotationCenter.y / view.bounds.height)
+        view.transform = rotationTransform
+    }
+    
+    private func setGaugeValue(value: CGFloat, around point: CGPoint? = nil) {
         let rotationAngle = value / totalValue * 180
-        let rotationTransform = CGAffineTransform(rotationAngle: rotationAngle.degreesToRadians)
-        arrowView.transform = rotationTransform
+        let rotationCenter = CGPoint(x: arrowView.bounds.midX + 35, y: arrowView.bounds.midY)
+        rotateView(view: self.arrowView, angle: rotationAngle.degreesToRadians, aroundPoint: point ?? rotationCenter)
     }
     
     @objc private func searchButtonTapped() {

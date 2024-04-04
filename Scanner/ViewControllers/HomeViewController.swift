@@ -24,7 +24,6 @@ class HomeViewController: UIViewController {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "wifi")
         imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -32,6 +31,12 @@ class HomeViewController: UIViewController {
         let wifiBox = WiFiBoxView()
         wifiBox.set(cornerRadius: 8)
         return wifiBox
+    }()
+    
+    private var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.showsVerticalScrollIndicator = false
+        return scrollView
     }()
     
     private var navigationView: NavigationCardView = {
@@ -63,24 +68,36 @@ class HomeViewController: UIViewController {
             backgroundCard,
             wifiImage,
             wifiBoxView,
-            navigationView
+            scrollView,
+            navigationView,
         ])
         
+        scrollView.addSubview(navigationView)
+        
         NSLayoutConstraint.activate([
-            backgroundCard.topAnchor.constraint(equalTo: view.topAnchor, constant: 10),
+            backgroundCard.topAnchor.constraint(equalTo: view.topAnchor),
             backgroundCard.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             backgroundCard.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            backgroundCard.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4),
             
             wifiImage.centerXAnchor.constraint(equalTo: backgroundCard.centerXAnchor),
-            wifiImage.topAnchor.constraint(equalTo: backgroundCard.topAnchor, constant: 109),
-
+            wifiImage.centerYAnchor.constraint(equalTo: backgroundCard.centerYAnchor),
+            wifiImage.heightAnchor.constraint(equalTo: backgroundCard.heightAnchor, multiplier: 0.5),
+            
             wifiBoxView.topAnchor.constraint(equalTo: backgroundCard.bottomAnchor, constant: -50),
             wifiBoxView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             wifiBoxView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
-            navigationView.topAnchor.constraint(equalTo: wifiBoxView.bottomAnchor, constant: 16),
-            navigationView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 36),
-            navigationView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -36)
+            scrollView.topAnchor.constraint(equalTo: wifiBoxView.bottomAnchor, constant: 16),
+            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 36),
+            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -36),
+            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            
+            navigationView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            navigationView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            navigationView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            navigationView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            navigationView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
     }
     

@@ -147,7 +147,7 @@ class ScanViewController: UIViewController {
             animation.topAnchor.constraint(equalTo: wifiName.bottomAnchor, constant: 71),
             animation.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             animation.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            animation.heightAnchor.constraint(equalToConstant: 350),
+            animation.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.4),
             
             percentageLabel.centerXAnchor.constraint(equalTo: animation.centerXAnchor),
             percentageLabel.centerYAnchor.constraint(equalTo: animation.centerYAnchor),

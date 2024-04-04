@@ -50,7 +50,7 @@
 		EE92947A2BBB738F00729F82 /* Device+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Device+Mock.swift"; sourceTree = "<group>"; };
 		EE92947D2BBBE70400729F82 /* DeviceInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoCell.swift; sourceTree = "<group>"; };
 		EE92947F2BBBE72500729F82 /* DeviceInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfoView.swift; sourceTree = "<group>"; };
-		EEF11EF02BB9D78C00864776 /* tf-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "tf-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEF11EF02BB9D78C00864776 /* Scanner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scanner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF11EF32BB9D78C00864776 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EEF11EF52BB9D78C00864776 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EEF11EFC2BB9D78E00864776 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		EEF11EE72BB9D78C00864776 = {
 			isa = PBXGroup;
 			children = (
-				EEF11EF22BB9D78C00864776 /* tf-ios */,
+				EEF11EF22BB9D78C00864776 /* Scanner */,
 				EEF11EF12BB9D78C00864776 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,12 +101,12 @@
 		EEF11EF12BB9D78C00864776 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EEF11EF02BB9D78C00864776 /* tf-ios.app */,
+				EEF11EF02BB9D78C00864776 /* Scanner.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EEF11EF22BB9D78C00864776 /* tf-ios */ = {
+		EEF11EF22BB9D78C00864776 /* Scanner */ = {
 			isa = PBXGroup;
 			children = (
 				EEF11F112BBA970700864776 /* ViewControllers */,
@@ -116,7 +116,7 @@
 				EEF11F122BBA971A00864776 /* Application */,
 				EEF11F0F2BBA96EA00864776 /* Resources */,
 			);
-			path = "tf-ios";
+			path = Scanner;
 			sourceTree = "<group>";
 		};
 		EEF11F0F2BBA96EA00864776 /* Resources */ = {
@@ -199,9 +199,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EEF11EEF2BB9D78C00864776 /* tf-ios */ = {
+		EEF11EEF2BB9D78C00864776 /* Scanner */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EEF11F042BB9D78E00864776 /* Build configuration list for PBXNativeTarget "tf-ios" */;
+			buildConfigurationList = EEF11F042BB9D78E00864776 /* Build configuration list for PBXNativeTarget "Scanner" */;
 			buildPhases = (
 				EEF11EEC2BB9D78C00864776 /* Sources */,
 				EEF11EED2BB9D78C00864776 /* Frameworks */,
@@ -211,12 +211,12 @@
 			);
 			dependencies = (
 			);
-			name = "tf-ios";
+			name = Scanner;
 			packageProductDependencies = (
 				EE92946E2BBB30BF00729F82 /* Lottie */,
 			);
 			productName = "tf-ios";
-			productReference = EEF11EF02BB9D78C00864776 /* tf-ios.app */;
+			productReference = EEF11EF02BB9D78C00864776 /* Scanner.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -234,7 +234,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EEF11EEB2BB9D78C00864776 /* Build configuration list for PBXProject "tf-ios" */;
+			buildConfigurationList = EEF11EEB2BB9D78C00864776 /* Build configuration list for PBXProject "Scanner" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -250,7 +250,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EEF11EEF2BB9D78C00864776 /* tf-ios */,
+				EEF11EEF2BB9D78C00864776 /* Scanner */,
 			);
 		};
 /* End PBXProject section */
@@ -447,12 +447,13 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yegormi.tf-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yegormi.scanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -474,12 +475,13 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.yegormi.tf-ios";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yegormi.scanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -490,7 +492,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EEF11EEB2BB9D78C00864776 /* Build configuration list for PBXProject "tf-ios" */ = {
+		EEF11EEB2BB9D78C00864776 /* Build configuration list for PBXProject "Scanner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EEF11F022BB9D78E00864776 /* Debug */,
@@ -499,7 +501,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EEF11F042BB9D78E00864776 /* Build configuration list for PBXNativeTarget "tf-ios" */ = {
+		EEF11F042BB9D78E00864776 /* Build configuration list for PBXNativeTarget "Scanner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EEF11F052BB9D78E00864776 /* Debug */,
